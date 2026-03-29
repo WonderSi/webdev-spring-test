@@ -8,4 +8,4 @@ spring:
 logging:
   level:
     root: WARN
-    com.example.delivery: DEBUG
+    com.example.lab5: DEBUG
