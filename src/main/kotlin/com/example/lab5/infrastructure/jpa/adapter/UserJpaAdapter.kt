@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Profile
 import org.springframework.stereotype.Component
 
 @Component
-@Profile("db")
+@Profile("db", "test")
 class UserJpaAdapter(
     private val userJpaRepository: UserJpaRepository
 ) : UserRepositoryPort {
