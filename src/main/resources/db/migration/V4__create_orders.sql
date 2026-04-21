@@ -1,0 +1,11 @@
+CREATE TYPE order_status AS ENUM ('PENDING', 'CONFIRMED', 'DELIVERED', 'CANCELLED');
+
+CREATE TABLE orders
+(
+    id         BIGSERIAL PRIMARY KEY,
+    status     order_status NOT NULL DEFAULT 'PENDING',
+    created_at TIMESTAMP    NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    user_id    BIGINT       NOT NULL,
+    CONSTRAINT fk_orders_user
+        FOREIGN KEY (user_id) REFERENCES users (id)
+);
